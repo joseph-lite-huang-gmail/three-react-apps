@@ -6,7 +6,7 @@ import Calculator from './Calculator/component/Calculator';
 export default class Hub extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { active: 'TIMER' };
+        this.state = { active: '' };
     }
 
     handleClick(component) {
