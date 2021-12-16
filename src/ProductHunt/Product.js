@@ -2,12 +2,11 @@ import React from 'react';
 
 export default class Product extends React.Component {
     handleUpvote() {
-        console.log('up');
-        this.props.onUpvote(this.props.name);
+        this.props.onUpvote(this.props.product.name);
     }
 
     handleDownvotes() {
-        this.props.onDownvote(this.props.name);
+        this.props.onDownvote(this.props.product.name);
     }
 
     render() {

@@ -8,7 +8,7 @@ export default class ProductHunt extends React.Component {
     }
 
     handleUpvote(name) {
-        let products = { ...this.state.products };
+        let products = [ ...this.state.products ];
         for (let i = 0; i < products.length; i++) {
             if (products[i].name === name) {
                 products[i].upvotes++;
@@ -18,7 +18,7 @@ export default class ProductHunt extends React.Component {
     }
 
     handleDownvotes(name) {
-        let products = { ...this.state.products };
+        let products = [ ...this.state.products ];
         for (let i = 0; i < products.length; i++) {
             if (products[i].name === name) {
                 products[i].downvotes++;
@@ -33,8 +33,8 @@ export default class ProductHunt extends React.Component {
                 {this.state.products.map(product => (
                     <Product
                         product={product}
-                        onUpvote={this.handleUpvote}
-                        onDownvote={this.handleDownvotes}
+                        onUpvote={(name) => this.handleUpvote(name)}
+                        onDownvote={(name) => this.handleDownvotes(name)}
                     />
                 ))}
             </div>
